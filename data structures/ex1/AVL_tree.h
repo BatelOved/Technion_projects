@@ -24,7 +24,7 @@ public:
     { return data_; }
 
     void print() const
-    { cout << data_ << endl; }
+    { T a = data_; }
 
 
 private:
@@ -89,7 +89,6 @@ private:
     AVLNode<T> *RL_Rotate(AVLNode<T> *node);
 
 
-
     int balanceFactor(AVLNode<T> *node) const;
 
 //todo: used for debugging
@@ -109,9 +108,9 @@ private:
 
     void inorderNObjects_aux(AVLNode<T> *node, T *output_target, int *i, int *n);
 
-    AVLNode<T> *buildOrdered_aux(T *data, int start, int end,int height);
+    AVLNode<T> *buildOrdered_aux(T *data, int start, int end, int height);
 
-    bool checkTree_aux(AVLNode<T>* node , int h);
+    bool checkTree_aux(AVLNode<T> *node, int h);
 };
 
 template<class T>
@@ -145,6 +144,9 @@ void AVLTree<T>::remove(const T &data)
 template<class T>
 void AVLTree<T>::clear()
 {
+    if (!checkTree()) {
+        cout << "NOOO!\n";
+    }
     if (root_) {
         deepRemoveNode(root_);
     }
@@ -442,29 +444,26 @@ AVLNode<T> *AVLTree<T>::buildOrdered_aux(T *data, int start, int end, int height
 template<class T>
 bool AVLTree<T>::checkTree()
 {
-    if(this->current_size_==0)
-    {
+    if (this->current_size_ == 0) {
         return root_ == nullptr;
     }
-    int height = log(current_size_)/log(2);
-    return checkTree_aux(root_,height);
+    int height = log(current_size_) / log(2);
+    return checkTree_aux(root_, height);
 }
 
 template<class T>
-bool AVLTree<T>::checkTree_aux(AVLNode<T>* node , int h)
+bool AVLTree<T>::checkTree_aux(AVLNode<T> *node, int h)
 {
-    if(node == nullptr)
-    {
+    if (node == nullptr) {
         return true;
     }
-    if(h==0)
-    {
-        if(node->right) return false;
-        if(node->left) return false;
+    if (h == 0) {
+        if (node->right) return false;
+        if (node->left) return false;
         return true;
     }
     //h>0
-    return checkTree_aux(node->right,h-1)&&checkTree_aux(node->left,h-1);
+    return checkTree_aux(node->right, h - 1) && checkTree_aux(node->left, h - 1);
 
 }
 

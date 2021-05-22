@@ -54,7 +54,7 @@ StatusType CarDealershipManager::SellCar(int typeID, int modelID)
     ResetCarElement *resetCarType = resetCarsTree_.find(ResetCarElement(typeID, modelID));
     ModelElement *resetModelType = NULL;
     if (resetCarType) {
-        resetModelType = resetCarType->resetModelsTree_.find(ModelElement(typeID, modelID));
+        resetModelType = resetCarType->resetModelsTree_->find(ModelElement(typeID, modelID));
         if (resetModelType) {
             ModelElement *newModel = new ModelElement(typeID, modelID, SELL_POINTS);
             carType->carModels_[modelID] = newModel;
@@ -65,8 +65,8 @@ StatusType CarDealershipManager::SellCar(int typeID, int modelID)
                 carType->carSales_ = saleElement;
                 salesTree_.insert(*saleElement);
             }
-            resetCarType->resetModelsTree_.remove(*resetModelType);
-            if (resetCarType->resetModelsTree_.currentSize() == 0)
+            resetCarType->resetModelsTree_->remove(*resetModelType);
+            if (resetCarType->resetModelsTree_->currentSize() == 0)
                 resetCarsTree_.remove(*resetCarType);
         }
     } else if (!resetCarType || !resetModelType) {
@@ -145,7 +145,7 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
     int reset_models, i;
     for (reset_models = i = 0;
          reset_models <= numOfModels && i < resetCarsTree_.currentSize() && i < numOfModels; ++i) {
-        reset_models += reset_cars[i].resetModelsTree_.getInOrder(reset_models_source + reset_models, numOfModels);
+        reset_models += reset_cars[i].resetModelsTree_->getInOrder(reset_models_source + reset_models, numOfModels);
     }
 
     reset_models = std::min(reset_models, numOfModels);
@@ -184,11 +184,11 @@ void CarDealershipManager::merge(ModelElement a[], int na, ModelElement b[], int
 void CarDealershipManager::checkTrees()
 {
     if(!this->carsTree_.checkTree())
-        cout<<"-------------------carsTree NOT OK - " ;
+        cout<<"carsTree NOT OK - " ;
     if(!this->modelsTree_.checkTree())
-        cout<<"-------------------modelsTree_ NOT OK - " ;
+        cout<<"carsTree NOT OK - " ;
     if(!this->salesTree_.checkTree())
-        cout<<"-------------------salesTree_ NOT OK - " ;
+        cout<<"carsTree NOT OK - " ;
     if(!this->resetCarsTree_.checkTree())
-        cout<<"-------------------resetCarsTree_ NOT OK - " ;
+        cout<<"carsTree NOT OK - " ;
 }

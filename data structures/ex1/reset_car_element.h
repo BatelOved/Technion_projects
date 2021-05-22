@@ -7,7 +7,7 @@
 
 class ResetCarElement {
 public:
-    AVLTree<ModelElement> resetModelsTree_;
+    AVLTree<ModelElement>* resetModelsTree_;
 
     ResetCarElement(int typeID, int numOfModels = 0);
 
@@ -23,8 +23,6 @@ public:
     bool operator<(const ResetCarElement &other) const;
 
     bool operator==(const ResetCarElement &other) const;
-
-    AVLTree<ModelElement> getModlesTree();
 
     int getCurrentNumOfModels();
 
