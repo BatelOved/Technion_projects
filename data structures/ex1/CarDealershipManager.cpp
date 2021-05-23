@@ -1,24 +1,33 @@
 #include "CarDealershipManager.h"
 
-CarDealershipManager::CarDealershipManager() :
-        resetCarsTree_(), carsTree_(), modelsTree_(), salesTree_()
-{}
+CarDealershipManager::CarDealershipManager()
+{
+    this->resetCarsTree_ = new AVLTree<ResetCarElement>;
+    this->carsTree_ = new AVLTree<CarElement>;
+    this->modelsTree_ = new AVLTree<ModelElement>;
+    this->salesTree_ = new AVLTree<SaleElement>;
+}
 
 //toDo: null check
 StatusType CarDealershipManager::AddCarType(int typeID, int numOfModels)
 {
     if (numOfModels <= 0 || typeID <= 0)
         return INVALID_INPUT;
-    CarElement *carElement = new CarElement(typeID, numOfModels);
-    if (carsTree_.find(*carElement) != NULL) {
+    auto *carElement = new CarElement(typeID, numOfModels);
+
+    if (carsTree_->find(carElement) != nullptr) {
         delete carElement;
         return FAILURE;
     }
-    SaleElement *saleElement = new SaleElement(typeID);
-    salesTree_.insert(*saleElement);
-    carElement->carSales_ = saleElement;
-    carsTree_.insert(*carElement);
-    resetCarsTree_.insert(*(new ResetCarElement(typeID, numOfModels)));
+    /*
+     * SaleElement *saleElement = new SaleElement(typeID);
+     salesTree_->insert(saleElement);
+
+     carElement->carSales_ = saleElement;*/
+    carsTree_->insert(carElement);
+
+    auto *reset_elem = new ResetCarElement(typeID, numOfModels);
+    resetCarsTree_->insert(reset_elem);
 
     return SUCCESS;
 }
@@ -27,18 +36,23 @@ StatusType CarDealershipManager::RemoveCarType(int typeID)
 {
     if (typeID <= 0)
         return INVALID_INPUT;
-    CarElement *toDelete = carsTree_.find(CarElement(typeID));
-    cout<<"";
+    CarElement *toDelete = carsTree_->find(new CarElement(typeID));
+    cout << "";
     if (!toDelete)
         return FAILURE;
-    resetCarsTree_.remove(ResetCarElement(typeID));
-    salesTree_.remove(*(toDelete->carSales_));
-    ModelElement **carModels = toDelete->carModels_;
-    for (int i = 0; i < toDelete->getNumOfModels(); i++) {
-        if (carModels[i])
-            modelsTree_.remove(*(carModels[i]));
+
+    ResetCarElement to_remove(typeID);
+    resetCarsTree_->remove(&to_remove);
+
+    for (int i = 0; i < toDelete->getNumOfModels(); ++i) {
+        if (toDelete->carSales_[i])
+            salesTree_->remove(toDelete->carSales_[i]);
     }
-    carsTree_.remove(*toDelete);
+    for (int i = 0; i < toDelete->getNumOfModels(); i++) {
+        if (toDelete->carModels_[i])
+            modelsTree_->remove(toDelete->carModels_[i]);
+    }
+    carsTree_->remove(toDelete);
     return SUCCESS;
 }
 
@@ -46,52 +60,71 @@ StatusType CarDealershipManager::SellCar(int typeID, int modelID)
 {
     if (typeID <= 0 || modelID < 0)
         return INVALID_INPUT;
-    CarElement *carType = carsTree_.find(CarElement(typeID));
-    if (!carType)
-        return FAILURE;
-    ResetCarElement *resetCarType = resetCarsTree_.find(ResetCarElement(typeID, modelID));
-    ModelElement *resetModelType = NULL;
-    if (resetCarType) {
-        resetModelType = resetCarType->resetModelsTree_->find(ModelElement(typeID, modelID));
-        if (resetModelType) {
-            ModelElement *newModel = new ModelElement(typeID, modelID, SELL_POINTS);
-            carType->carModels_[modelID] = newModel;
-            modelsTree_.insert(*newModel);
-            SaleElement *saleElement = new SaleElement(typeID, modelID, SELL_POINTS);
-            if (*saleElement > *(carType->carSales_)) {
-                salesTree_.remove(*(carType->carSales_));
-                carType->carSales_ = saleElement;
-                salesTree_.insert(*saleElement);
-            }
-            resetCarType->resetModelsTree_->remove(*resetModelType);
-            if (resetCarType->resetModelsTree_->currentSize() == 0)
-            {
-                resetCarsTree_.remove(ResetCarElement(resetCarType->getTypeID()));}
-        }
-    } else if (!resetCarType || !resetModelType) {
-        ModelElement *newModel = new ModelElement(typeID, modelID,
-                                                  carType->carModels_[modelID]->getGrade() + SELL_POINTS);
-        modelsTree_.remove(*(carType->carModels_[modelID]));
-        carType->carModels_[modelID] = newModel;
-        modelsTree_.insert(*newModel);
 
-        SaleElement *saleElement = new SaleElement(typeID, modelID, carType->carSales_->getSales() + SELL_POINTS);
-        if (*saleElement > *(carType->carSales_)) {
-            salesTree_.remove(*(carType->carSales_));
-            carType->carSales_ = saleElement;
-            salesTree_.insert(*saleElement);
+    //find car element
+    CarElement to_find = CarElement(typeID);
+    CarElement *carType = carsTree_->find(&to_find);
+
+    if (!carType) //if dealership doesn't offer this car
+        return FAILURE;
+
+    //check if car- model was sold in the past:
+    ResetCarElement to_find_1 = ResetCarElement(typeID, modelID);
+    ResetCarElement *resetCarType = resetCarsTree_->find(&to_find_1);
+
+    if (resetCarType) { //if car has unsold models
+        ModelElement to_find_2 = ModelElement(typeID, modelID);
+        ModelElement *resetModelType = resetCarType->resetModelsTree_->find(&to_find_2);
+        if (resetModelType) { // if this models was never sold
+
+            // add to the tree of sold models
+            auto *newModel = new ModelElement(typeID, modelID, SELL_POINTS);
+            modelsTree_->insert(newModel);
+            carType->connectModelElement(newModel, modelID);
+
+            //update sales tree
+            auto *newSaleElement = new SaleElement(typeID, modelID, SELL_POINTS);
+            salesTree_->insert(newSaleElement);
+            carType->connectSaleElement(newSaleElement, modelID);
+
+            //update unsold cars tree
+            auto to_remove_2 = ModelElement(typeID, modelID);
+            resetCarType->resetModelsTree_->remove(&to_remove_2);
+            if (resetCarType->resetModelsTree_->currentSize() == 0)
+                resetCarsTree_->remove(resetCarType);
+
+            return SUCCESS;
         }
+    }
+    //if looking at first time sell
+
+    //update model tree:
+    auto *newModel = new ModelElement
+            (typeID, modelID, carType->carModels_[modelID]->getGrade() + SELL_POINTS);
+    //  by removing old model
+    modelsTree_->remove((carType->carModels_[modelID]));
+    //  and inset new one
+    carType->connectModelElement(newModel, modelID);
+    modelsTree_->insert(newModel);
+
+    //update sales tree:
+    int new_sales_amount = carType->carSales_[modelID]->getSales();
+    new_sales_amount++;
+    auto *newSaleElement = new SaleElement(typeID, modelID, new_sales_amount);
+    if (*newSaleElement > *(carType->carSales_[modelID])) {
+        salesTree_->remove((carType->carSales_[modelID]));
+        salesTree_->insert(newSaleElement);
+        carType->connectSaleElement(newSaleElement, modelID);
     }
     return SUCCESS;
 }
 
-//toDo
 StatusType CarDealershipManager::MakeComplaint(int typeID, int modelID, int t)
 {
     if (typeID <= 0 || modelID < 0)
         return INVALID_INPUT;
 
-    CarElement *car = this->carsTree_.find(CarElement(typeID));
+    CarElement *car = this->carsTree_->find(new CarElement(typeID));
     if (car == nullptr)
         return FAILURE;
 
@@ -101,10 +134,10 @@ StatusType CarDealershipManager::MakeComplaint(int typeID, int modelID, int t)
 
     //out with the old
     ModelElement *model_new = model_old->clone();
-    modelsTree_.remove(*model_old);
+    modelsTree_->remove(model_old);
     //in with the new :)
     model_new->reciveComplaint(t);
-    modelsTree_.insert(*model_new);
+    modelsTree_->insert(model_new);
 
     return SUCCESS;
 }
@@ -116,13 +149,14 @@ StatusType CarDealershipManager::GetBestSellerModelByType(int typeID, int *model
         return INVALID_INPUT;
 
     if (typeID > 0) {
-        CarElement *car_element = this->carsTree_.find(CarElement(typeID));
-        SaleElement *best_seller_model = car_element->carSales_;
+        auto to_find_0 = CarElement(typeID);
+        CarElement *car_element = this->carsTree_->find(&to_find_0);
+        SaleElement *best_seller_model = car_element->getBestSeller();
 
         *modelID = best_seller_model->getModelId();
     } else {
-        SaleElement &best_seller_model = this->salesTree_.getMostRight();
-        *modelID = best_seller_model.getModelId();
+        SaleElement *best_seller_model = this->salesTree_->getMostRight();
+        *modelID = best_seller_model->getModelId();
     }
     return SUCCESS;
 }
@@ -133,14 +167,13 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
         return INVALID_INPUT;
     }
     ModelElement models_source[numOfModels];
-    int models = modelsTree_.getInOrder(models_source, numOfModels);
+    int models = modelsTree_->getInOrder(models_source, numOfModels);
 
     ResetCarElement reset_cars[numOfModels];
     ModelElement reset_models_source[numOfModels];
-    int cars = resetCarsTree_.getInOrder(reset_cars, numOfModels);
     int reset_models, i;
     for (reset_models = i = 0;
-         reset_models <= numOfModels && i < resetCarsTree_.currentSize() && i < numOfModels; ++i) {
+         reset_models <= numOfModels && i < carsTree_->currentSize() && i < numOfModels; ++i) {
         reset_models += reset_cars[i].resetModelsTree_->getInOrder(reset_models_source + reset_models, numOfModels);
     }
 
@@ -148,16 +181,16 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
     ModelElement all_models_source[std::min(models + reset_models, numOfModels)];
     merge(models_source, models, reset_models_source, reset_models, all_models_source);
 
-    for (int i = 0; i < numOfModels && i < std::min(models + reset_models, numOfModels); i++) {
-        types_target[i] = all_models_source[i].getTypeId();
-        models_target[i] = all_models_source[i].getModel();
+    for (auto j = 0; j < numOfModels && j < std::min(models + reset_models, numOfModels); j++) {
+        types_target[j] = all_models_source[j].getTypeId();
+        models_target[j] = all_models_source[j].getModel();
     }
     return SUCCESS;
 }
 
 CarDealershipManager::~CarDealershipManager()
 {
-
+    checkTrees();
 }
 
 void CarDealershipManager::merge(ModelElement a[], int na, ModelElement b[], int nb, ModelElement c[])
@@ -178,12 +211,13 @@ void CarDealershipManager::merge(ModelElement a[], int na, ModelElement b[], int
 
 void CarDealershipManager::checkTrees()
 {
-    if(!this->carsTree_.checkTree())
-        cout<<"carsTree NOT OK - " ;
-    if(!this->modelsTree_.checkTree())
-        cout<<"carsTree NOT OK - " ;
-    if(!this->salesTree_.checkTree())
-        cout<<"carsTree NOT OK - " ;
-    if(!this->resetCarsTree_.checkTree())
-        cout<<"carsTree NOT OK - " ;
+    if (!this->carsTree_->checkTree())
+        cout << "carsTree NOT OK - ";
+    if (!this->modelsTree_->checkTree())
+        cout << "carsTree NOT OK - ";
+    if (!this->salesTree_->checkTree())
+        cout << "carsTree NOT OK - ";
+    if (!this->carsTree_->checkTree())
+        cout << "carsTree NOT OK - ";
 }
+

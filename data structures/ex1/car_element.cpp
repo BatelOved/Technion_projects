@@ -1,9 +1,12 @@
 #include "car_element.h"
 
 CarElement::CarElement(int typeID, int numOfModels) :
-        typeID_(typeID), numOfModels_(numOfModels), carSales_(nullptr), carModels_(new ModelElement *[numOfModels])
+        typeID_(typeID), numOfModels_(numOfModels), carSales_(new SaleElement *[numOfModels]),
+        carModels_(new ModelElement
+        *[numOfModels])
 {
     for (int i; i < numOfModels; i++) {
+        carSales_[i] = nullptr;
         carModels_[i] = nullptr;
     }
 }
@@ -11,9 +14,11 @@ CarElement::CarElement(int typeID, int numOfModels) :
 CarElement::~CarElement()
 {
     if (carModels_) {
-        for (int i = 0; i < numOfModels_; i++)
+        for (int i = 0; i < numOfModels_; i++) {
+            if (carSales_[i]) { delete carSales_[i]; }
             if (carModels_[i]) { delete carModels_[i]; }
-
+        }
+        delete[] carSales_;
         delete[] carModels_;
     }
 }
@@ -37,7 +42,7 @@ bool CarElement::operator<(const CarElement &other) const
 
 SaleElement *CarElement::getBestSeller()
 {
-    return carSales_;
+    return carSales_[best_seller_];
 }
 
 ModelElement *CarElement::getModel(int i)
@@ -51,3 +56,20 @@ CarElement::CarElement(int typeID) : typeID_(typeID)
 {
     carModels_ = nullptr;
 }
+
+void CarElement::connectModelElement(ModelElement *m, int index)
+{
+    this->carModels_[index] = m;
+}
+
+void CarElement::connectSaleElement(SaleElement *s, int index)
+{
+    this->carSales_[index] = s;
+    if(this->carSales_[best_seller_] == nullptr)
+    {
+        best_seller_ = index;
+    }
+    else if (*s > *(this->carSales_[best_seller_]))
+        best_seller_ = index;
+}
+

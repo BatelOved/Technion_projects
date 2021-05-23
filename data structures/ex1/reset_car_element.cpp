@@ -4,9 +4,9 @@
 ResetCarElement::ResetCarElement(int typeID, int numOfModels) :
         typeID_(typeID), numOfModels_(numOfModels), resetModelsTree_(new AVLTree<ModelElement>)
 {
-        ModelElement arr[numOfModels];
+        ModelElement** arr = new ModelElement*[numOfModels];
         for (int i = 0; i < numOfModels; i++) {
-            arr[i] = ModelElement(typeID, i);
+            arr[i] = new ModelElement(typeID, i);
         }
         this->resetModelsTree_->buildOrdered(arr,numOfModels);
         checkTree();
@@ -21,7 +21,6 @@ ResetCarElement::ResetCarElement():resetModelsTree_(new AVLTree<ModelElement>)
 
 ResetCarElement::~ResetCarElement()
 {
-    checkTree();
     delete this->resetModelsTree_;
 }
 

@@ -26,13 +26,14 @@ public:
 
     ~CarDealershipManager();
 
-private:
-    AVLTree<ResetCarElement> resetCarsTree_;
-    AVLTree<CarElement> carsTree_;
-    AVLTree<ModelElement> modelsTree_;
-    AVLTree<SaleElement> salesTree_;
 
-    void merge(ModelElement a[], int na, ModelElement b[], int nb, ModelElement c[]);
+private:
+    AVLTree<ResetCarElement>* resetCarsTree_;
+    AVLTree<CarElement>* carsTree_;
+    AVLTree<ModelElement>* modelsTree_;
+    AVLTree<SaleElement>* salesTree_;
+
+    static void merge(ModelElement a[], int na, ModelElement b[], int nb, ModelElement c[]);
 
     void checkTrees();
 };

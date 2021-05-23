@@ -1,4 +1,3 @@
-
 /***************************************************************************/
 /*                                                                         */
 /* 234218 Data DSs 1, Spring 2021                                          */
@@ -29,22 +28,22 @@ typedef enum {
     NONE_CMD = -2,
     COMMENT_CMD = -1,
     INIT_CMD = 0,
-	ADDCARTYPE_CMD = 1,
-	REMOVECARTYPE_CMD = 2,
-	SELLCAR_CMD = 3,
-	MAKECOMPLAINT_CMD = 4,
-	GETBESTSELLERMODELBYTYPE_CMD = 5,
-	GETWORSTMODELS_CMD = 6,
+    ADDCARTYPE_CMD = 1,
+    REMOVECARTYPE_CMD = 2,
+    SELLCAR_CMD = 3,
+    MAKECOMPLAINT_CMD = 4,
+    GETBESTSELLERMODELBYTYPE_CMD = 5,
+    GETWORSTMODELS_CMD = 6,
     QUIT_CMD = 7
 } commandType;
 
-static const int numActions = 10;
+static const int numActions = 8;
 static const char *commandStr[] = {
         "Init",
         "AddCarType",
         "RemoveCarType",
         "SellCar",
-		"MakeComplaint",
+        "MakeComplaint",
         "GetBestSellerModelByType",
         "GetWorstModels",
         "Quit" };
@@ -142,7 +141,7 @@ static errorType parser(const char* const command) {
     errorType rtn_val = error;
 
     commandType command_val = CheckCommand(command, &command_args);
-	
+
     switch (command_val) {
 
         case (INIT_CMD):
@@ -165,7 +164,7 @@ static errorType parser(const char* const command) {
             break;
         case (GETWORSTMODELS_CMD):
             rtn_val = OnGetWorstModels(DS, command_args);
-            break;			
+            break;
         case (QUIT_CMD):
             rtn_val = OnQuit(&DS, command_args);
             break;
@@ -219,7 +218,7 @@ static errorType OnAddCarType(void* DS, const char* const command) {
 static errorType OnRemoveCarType(void* DS, const char* const command) {
     int typeID;
     ValidateRead(sscanf(command, "%d", &typeID), 1, "%s failed.\n", commandStr[REMOVECARTYPE_CMD]);
-	StatusType res = RemoveCarType(DS, typeID);
+    StatusType res = RemoveCarType(DS, typeID);
 
     if (res != SUCCESS) {
         printf("%s: %s\n", commandStr[REMOVECARTYPE_CMD], ReturnValToStr(res));
@@ -259,7 +258,7 @@ static errorType OnMakeComplaint(void* DS, const char* const command) {
 }
 
 static errorType OnGetBestSellerModelByType(void* DS, const char* const command) {
-	int typeID, modelID;
+    int typeID, modelID;
     ValidateRead(sscanf(command, "%d", &typeID), 1, "%s failed.\n", commandStr[GETBESTSELLERMODELBYTYPE_CMD]);
     StatusType res = GetBestSellerModelByType(DS, typeID, &modelID);
 
@@ -275,31 +274,31 @@ static errorType OnGetBestSellerModelByType(void* DS, const char* const command)
 static errorType OnGetWorstModels(void* DS, const char* const command) {
     int numOfModels;
     int *types = NULL, *models = NULL;
-	StatusType res = SUCCESS;
+    StatusType res = SUCCESS;
 
-	ValidateRead(sscanf(command, "%d", &numOfModels), 1, "%s failed.\n", commandStr[GETWORSTMODELS_CMD]);
-	if (numOfModels > 0) {
-		types = (int *)malloc(numOfModels * sizeof(int));
-		models = (int *)malloc(numOfModels * sizeof(int));
-		if (types == NULL || models == NULL) {
-		res = ALLOCATION_ERROR;
-		}
-	}
+    ValidateRead(sscanf(command, "%d", &numOfModels), 1, "%s failed.\n", commandStr[GETWORSTMODELS_CMD]);
+    if (numOfModels > 0) {
+        types = (int *)malloc(numOfModels * sizeof(int));
+        models = (int *)malloc(numOfModels * sizeof(int));
+        if (types == NULL || models == NULL) {
+            res = ALLOCATION_ERROR;
+        }
+    }
 
-	if (res != ALLOCATION_ERROR) {
-		res = GetWorstModels(DS, numOfModels, types, models);
-	}
+    if (res != ALLOCATION_ERROR) {
+        res = GetWorstModels(DS, numOfModels, types, models);
+    }
 
     if (res != SUCCESS) {
         printf("%s: %s\n", commandStr[GETWORSTMODELS_CMD], ReturnValToStr(res));
-		if (types != NULL) free(types);
-		if (models != NULL) free(models);
+        if (types != NULL) free(types);
+        if (models != NULL) free(models);
         return error_free;
     }
 
-    
+
     printf("--Start of worst models--\n");
-	printf("CarType\t|\tModel\n");
+    printf("CarType\t|\tModel\n");
 
     for (int i = 0; i < numOfModels; i++)
     {
@@ -307,10 +306,10 @@ static errorType OnGetWorstModels(void* DS, const char* const command) {
     }
 
     printf("--End of worst models--\n");
-	printf("%s: %s\n", commandStr[GETWORSTMODELS_CMD], ReturnValToStr(res));
+    printf("%s: %s\n", commandStr[GETWORSTMODELS_CMD], ReturnValToStr(res));
 
-	if (types != NULL) free(types);
-	if (models != NULL) free(models);
+    if (types != NULL) free(types);
+    if (models != NULL) free(models);
 
     return error_free;
 }
