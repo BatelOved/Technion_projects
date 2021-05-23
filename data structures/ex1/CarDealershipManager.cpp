@@ -138,7 +138,7 @@ StatusType CarDealershipManager::MakeComplaint(int typeID, int modelID, int t)
     //in with the new :)
     model_new->reciveComplaint(t);
     modelsTree_->insert(model_new);
-
+    car->connectModelElement(model_new, modelID);
     return SUCCESS;
 }
 
@@ -167,21 +167,24 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
         return INVALID_INPUT;
     }
     ModelElement models_source[numOfModels];
-    int models = modelsTree_->getInOrder(models_source, numOfModels);
+    int models_count = modelsTree_->getInOrder(models_source, min(numOfModels,modelsTree_->currentSize()));
 
     ResetCarElement reset_cars[numOfModels];
+    this->resetCarsTree_->getInOrder(reset_cars,numOfModels);
+
     ModelElement reset_models_source[numOfModels];
-    int reset_models, i;
-    for (reset_models = i = 0;
-         reset_models <= numOfModels && i < carsTree_->currentSize() && i < numOfModels; ++i) {
-        reset_models += reset_cars[i].resetModelsTree_->getInOrder(reset_models_source + reset_models, numOfModels);
+    int reset_models_count = 0;
+    for (int i = 0; reset_models_count <= numOfModels && i < carsTree_->currentSize() && i < numOfModels; ++i) {
+        ModelElement* ptr = reset_models_source + reset_models_count;
+        reset_models_count += reset_cars[i].resetModelsTree_->getInOrder(ptr, numOfModels);
     }
 
-    reset_models = std::min(reset_models, numOfModels);
-    ModelElement all_models_source[std::min(models + reset_models, numOfModels)];
-    merge(models_source, models, reset_models_source, reset_models, all_models_source);
+    reset_models_count = std::min(reset_models_count, numOfModels);
+    ModelElement all_models_source[std::min(models_count + reset_models_count, numOfModels)];
 
-    for (auto j = 0; j < numOfModels && j < std::min(models + reset_models, numOfModels); j++) {
+    merge(models_source, models_count, reset_models_source, reset_models_count, all_models_source);
+
+    for (auto j = 0; j < numOfModels && j < std::min(models_count + reset_models_count, numOfModels); j++) {
         types_target[j] = all_models_source[j].getTypeId();
         models_target[j] = all_models_source[j].getModel();
     }
