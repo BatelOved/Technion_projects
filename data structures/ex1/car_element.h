@@ -37,6 +37,8 @@ public:
 
     void connectSaleElement(SaleElement* m,int index);
 
+    void clear();
+
 private:
     int typeID_;
     int numOfModels_;

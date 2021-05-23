@@ -28,8 +28,7 @@ StatusType SellCar(void *DS, int typeID, int modelID)
     if (!DS || typeID <= 0 || modelID < 0) {
         return INVALID_INPUT;
     }
-    auto CD =*((CarDealershipManager *) DS);
-    return CD.SellCar(typeID, modelID);
+    return ((CarDealershipManager *) DS)->SellCar(typeID,modelID);
 }
 
 //todo :is t between 0-12? if so: to add check

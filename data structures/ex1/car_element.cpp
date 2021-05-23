@@ -2,13 +2,9 @@
 
 CarElement::CarElement(int typeID, int numOfModels) :
         typeID_(typeID), numOfModels_(numOfModels), carSales_(new SaleElement *[numOfModels]),
-        carModels_(new ModelElement
-        *[numOfModels])
+        carModels_(new ModelElement*[numOfModels]),best_seller_(0)
 {
-    for (int i; i < numOfModels; i++) {
-        carSales_[i] = nullptr;
-        carModels_[i] = nullptr;
-    }
+   clear();
 }
 
 CarElement::~CarElement()
@@ -71,5 +67,14 @@ void CarElement::connectSaleElement(SaleElement *s, int index)
     }
     else if (*s > *(this->carSales_[best_seller_]))
         best_seller_ = index;
+}
+
+void CarElement::clear()
+{
+    for (int i; i < this->numOfModels_; i++) {
+        carSales_[i] = nullptr;
+        carModels_[i] = nullptr;
+    }
+    best_seller_=0;
 }
 

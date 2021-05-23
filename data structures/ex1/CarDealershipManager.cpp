@@ -36,14 +36,15 @@ StatusType CarDealershipManager::RemoveCarType(int typeID)
 {
     if (typeID <= 0)
         return INVALID_INPUT;
-    CarElement *toDelete = carsTree_->find(new CarElement(typeID));
-    cout << "";
+    CarElement to_find = CarElement(typeID);
+    CarElement *toDelete = carsTree_->find(&to_find);
     if (!toDelete)
         return FAILURE;
 
     ResetCarElement to_remove(typeID);
     resetCarsTree_->remove(&to_remove);
 
+    toDelete->clear();
     for (int i = 0; i < toDelete->getNumOfModels(); ++i) {
         if (toDelete->carSales_[i])
             salesTree_->remove(toDelete->carSales_[i]);
@@ -52,6 +53,7 @@ StatusType CarDealershipManager::RemoveCarType(int typeID)
         if (toDelete->carModels_[i])
             modelsTree_->remove(toDelete->carModels_[i]);
     }
+    toDelete->clear();
     carsTree_->remove(toDelete);
     return SUCCESS;
 }
@@ -65,7 +67,7 @@ StatusType CarDealershipManager::SellCar(int typeID, int modelID)
     CarElement to_find = CarElement(typeID);
     CarElement *carType = carsTree_->find(&to_find);
 
-    if (!carType) //if dealership doesn't offer this car
+    if (!carType||carType->getNumOfModels()<=modelID) //if dealership doesn't offer this car
         return FAILURE;
 
     //check if car- model was sold in the past:
@@ -193,6 +195,7 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
 
 CarDealershipManager::~CarDealershipManager()
 {
+    cout<<"in dtor \n";
     checkTrees();
 }
 
