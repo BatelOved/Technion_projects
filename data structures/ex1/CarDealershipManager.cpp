@@ -67,7 +67,7 @@ StatusType CarDealershipManager::SellCar(int typeID, int modelID)
     CarElement to_find = CarElement(typeID);
     CarElement *carType = carsTree_->find(&to_find);
 
-    if (!carType||carType->getNumOfModels()<=modelID) //if dealership doesn't offer this car
+    if (!carType || carType->getNumOfModels() <= modelID) //if dealership doesn't offer this car
         return FAILURE;
 
     //check if car- model was sold in the past:
@@ -131,8 +131,20 @@ StatusType CarDealershipManager::MakeComplaint(int typeID, int modelID, int t)
         return FAILURE;
 
     ModelElement *model_old = car->getModel(modelID);
-    if (model_old == nullptr)
+    if (model_old == nullptr) {
         return FAILURE;
+    }
+    /*{
+        SellCar(typeID,modelID);
+        //out with the old
+        ModelElement *model_new = new ModelElement(typeID,modelID,10);
+        modelsTree_->remove(model_new);
+        model_new->reciveComplaint(10);
+        modelsTree_->insert(model_new);
+        car->connectModelElement(model_new, modelID);
+    }
+    model_old = car->getModel(modelID);*/
+
 
     //out with the old
     ModelElement *model_new = model_old->clone();
@@ -144,7 +156,7 @@ StatusType CarDealershipManager::MakeComplaint(int typeID, int modelID, int t)
     return SUCCESS;
 }
 
-//toDo
+
 StatusType CarDealershipManager::GetBestSellerModelByType(int typeID, int *modelID)
 {
     if (typeID < 0)
@@ -154,8 +166,10 @@ StatusType CarDealershipManager::GetBestSellerModelByType(int typeID, int *model
         auto to_find_0 = CarElement(typeID);
         CarElement *car_element = this->carsTree_->find(&to_find_0);
         SaleElement *best_seller_model = car_element->getBestSeller();
-
-        *modelID = best_seller_model->getModelId();
+        if (best_seller_model == nullptr)
+            *modelID = 0;
+        else
+            *modelID = best_seller_model->getModelId();
     } else {
         SaleElement *best_seller_model = this->salesTree_->getMostRight();
         *modelID = best_seller_model->getModelId();
@@ -169,15 +183,15 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
         return INVALID_INPUT;
     }
     ModelElement models_source[numOfModels];
-    int models_count = modelsTree_->getInOrder(models_source, min(numOfModels,modelsTree_->currentSize()));
+    int models_count = modelsTree_->getInOrder(models_source, min(numOfModels, modelsTree_->currentSize()));
 
     ResetCarElement reset_cars[numOfModels];
-    this->resetCarsTree_->getInOrder(reset_cars,numOfModels);
+    this->resetCarsTree_->getInOrder(reset_cars, numOfModels);
 
     ModelElement reset_models_source[numOfModels];
     int reset_models_count = 0;
     for (int i = 0; reset_models_count <= numOfModels && i < carsTree_->currentSize() && i < numOfModels; ++i) {
-        ModelElement* ptr = reset_models_source + reset_models_count;
+        ModelElement *ptr = reset_models_source + reset_models_count;
         reset_models_count += reset_cars[i].resetModelsTree_->getInOrder(ptr, numOfModels);
     }
 
@@ -195,7 +209,7 @@ StatusType CarDealershipManager::GetWorstModels(int numOfModels, int *types_targ
 
 CarDealershipManager::~CarDealershipManager()
 {
-    cout<<"in dtor \n";
+    cout << "in dtor \n";
     checkTrees();
 }
 
