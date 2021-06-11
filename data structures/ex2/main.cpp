@@ -1,33 +1,33 @@
 #include <iostream>
-#include "DynamicArray.h"
-#include "AgencyType.h"
-#include "union_find.h"
+#include "Dynamic_Array.h"
+#include "Agency.h"
+#include "Union_Find.h"
 
 #ifdef __cplusplus
 
 class UniteIntFunc {
 public:
-    AgencyType* operator()(AgencyType& a, AgencyType& b)
+    Agency* operator()(Agency& a, Agency& b)
     {
-        return new AgencyType();
+        return new Agency();
     }
 };
 void test1()
 {
-    auto dar = new DynamicArray<AgencyType>();
-    dar->add(new AgencyType());
-    dar->add(new AgencyType());
+    auto dar = new Dynamic_Array<Agency>();
+    dar->add(new Agency());
+    dar->add(new Agency());
     delete dar;
 }
 
 void test2()
 {
-    auto u = new UnionFind<AgencyType>();
+    auto u = new UnionFind<Agency>();
 
-    //AgencyType *na = nullptr;
+    //Agency *na = nullptr;
     for (int i = 0; i < 5; ++i) {
-        //na = new AgencyType();
-        u->makeSet(new AgencyType());
+        //na = new Agency();
+        u->makeSet(new Agency());
         //na = nullptr;
         u->printElements();
     }

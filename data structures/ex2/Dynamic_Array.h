@@ -2,11 +2,11 @@
 // Created by ASUS on 09/06/2021.
 //
 
-#ifndef DATA_STRUCT_1_HW_1_DYNAMICARRAY_H
-#define DATA_STRUCT_1_HW_1_DYNAMICARRAY_H
+#ifndef DATA_STRUCT_1_HW_1_DYNAMIC_ARRAY_H
+#define DATA_STRUCT_1_HW_1_DYNAMIC_ARRAY_H
 
 template<class T>
-class DynamicArray {
+class Dynamic_Array {
 
 private:
     T **arr;
@@ -14,7 +14,7 @@ private:
     int size;
 
 public:
-    DynamicArray();
+    Dynamic_Array();
 
     void add(T *data = nullptr);
 
@@ -28,11 +28,11 @@ public:
 
     void replaceAt(int index,T *data);
 
-    ~DynamicArray();
+    ~Dynamic_Array();
 };
 
 template<class T>
-DynamicArray<T>::DynamicArray()
+Dynamic_Array<T>::Dynamic_Array()
 {
     arr = new T*[1];
     count = 0;
@@ -40,7 +40,7 @@ DynamicArray<T>::DynamicArray()
 }
 
 template<class T>
-void DynamicArray<T>::add(T *data)
+void Dynamic_Array<T>::add(T *data)
 {
     if (count == size) {
         growSize(); // make array size double
@@ -50,7 +50,7 @@ void DynamicArray<T>::add(T *data)
 }
 
 template<class T>
-void DynamicArray<T>::growSize()
+void Dynamic_Array<T>::growSize()
 {
     T **temp = nullptr;
     if (count == size) {
@@ -68,7 +68,7 @@ void DynamicArray<T>::growSize()
 }
 
 template<class T>
-void DynamicArray<T>::shrinkSize()
+void Dynamic_Array<T>::shrinkSize()
 {
     T *temp = nullptr;
     if (count > 0) {
@@ -84,13 +84,13 @@ void DynamicArray<T>::shrinkSize()
 }
 
 template<class T>
-T &DynamicArray<T>::operator[](int index)
+T &Dynamic_Array<T>::operator[](int index)
 {
     return *arr[index];
 }
 
 template<class T>
-const T &DynamicArray<T>::operator[](int index) const
+const T &Dynamic_Array<T>::operator[](int index) const
 {
     if (index > count)
         return nullptr;
@@ -100,7 +100,7 @@ const T &DynamicArray<T>::operator[](int index) const
 }
 
 template<class T>
-DynamicArray<T>::~DynamicArray()
+Dynamic_Array<T>::~Dynamic_Array()
 {
     for (int i = 0; i < count; ++i) {
         auto  t= arr[i];
@@ -110,10 +110,10 @@ DynamicArray<T>::~DynamicArray()
 }
 
 template<class T>
-void DynamicArray<T>::replaceAt(int index,T *data)
+void Dynamic_Array<T>::replaceAt(int index, T *data)
 {
     delete arr[index];
     arr[index] = data;
 }
 
-#endif //DATA_STRUCT_1_HW_1_DYNAMICARRAY_H
+#endif //DATA_STRUCT_1_HW_1_DYNAMIC_ARRAY_H

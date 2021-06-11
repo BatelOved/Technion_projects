@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(DS1
         main.cpp
         library2.h library2.cpp
-        CarAgenciesManager.h
-        union_find.h
-        CarElement.h CarElement.cpp
-        AgencyType.h
-        DynamicArray.h )
+        Car_Agencies_Manager.h
+        Union_Find.h
+        Car_Element.h Car_Element.cpp
+        Agency.h
+        Dynamic_Array.h)

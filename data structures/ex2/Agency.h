@@ -2,21 +2,21 @@
 #define AGENCY_TYPE_H
 
 //#include "../ex1/AVL_tree.h"
-#include "CarElement.h"
-#include "Rank_tree.h"
+#include "Car_Element.h"
+#include "Rank_Tree.h"
 
-class AgencyType {
+class Agency {
 public:
-    AgencyType() =default;
+    Agency() =default;
 
-    ~AgencyType()=default;
+    ~Agency()=default;
 
     void sellCar(int carType, int amount)
     {
         //todo: complete
     }
-    //AVLTree<CarElement,>* cars_;
-    //Rank_tree<CarElement,int>* sales_;
+    //AVLTree<Car_Element,>* cars_;
+    //Rank_tree<Car_Element,int>* sales_;
 };
 
 

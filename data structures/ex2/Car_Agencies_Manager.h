@@ -2,12 +2,12 @@
 #define CAR_AGENCIES_MANAGER_H
 
 #include "library2.h"
-#include "union_find.h"
-#include "AgencyType.h"
+#include "Union_Find.h"
+#include "Agency.h"
 
-class CarAgenciesManager {
+class Car_Agencies_Manager {
 public:
-    CarAgenciesManager();
+    Car_Agencies_Manager();
 
     StatusType AddAgency();
 
@@ -17,67 +17,67 @@ public:
 
     StatusType GetIthSoldType(int agencyID, int i, int *res);
 
-    ~CarAgenciesManager();
+    ~Car_Agencies_Manager();
 
     class UniteAgenciesFunc {
     public:
-        AgencyType *operator()(AgencyType &a, AgencyType &b);
+        Agency *operator()(Agency &a, Agency &b);
     };
 
 private:
-    UnionFind<AgencyType> *agencies_;
+    UnionFind<Agency> *agencies_;
 
-    void merge(CarElement *a, int na, CarElement *b, int nb, CarElement *c);
+    void merge(Car_Element *a, int na, Car_Element *b, int nb, Car_Element *c);
 };
 
-CarAgenciesManager::CarAgenciesManager()
+Car_Agencies_Manager::Car_Agencies_Manager()
 {
-    agencies_ = new UnionFind<AgencyType>;
+    agencies_ = new UnionFind<Agency>;
 }
 
-StatusType CarAgenciesManager::AddAgency()
+StatusType Car_Agencies_Manager::AddAgency()
 {
     //todo: add try catch for memory leaks
-    auto na = new AgencyType();
+    auto na = new Agency();
     agencies_->makeSet(na);
     return SUCCESS;
 }
 
-StatusType CarAgenciesManager::SellCar(int agencyID, int typeID, int k)
+StatusType Car_Agencies_Manager::SellCar(int agencyID, int typeID, int k)
 {
     if (agencies_->findIdentifier(agencyID) == agencies_->NO_PARENT) {
         return FAILURE;
     }
-    AgencyType &agency = agencies_->findElement(agencyID);
+    Agency &agency = agencies_->findElement(agencyID);
     agency.sellCar(typeID, k);
     return SUCCESS;
 
 }
 
-StatusType CarAgenciesManager::UniteAgencies(int agencyID1, int agencyID2)
+StatusType Car_Agencies_Manager::UniteAgencies(int agencyID1, int agencyID2)
 {
     agencies_->Union(agencyID1, agencyID2, UniteAgenciesFunc());
     return FAILURE;
 }
 
-StatusType CarAgenciesManager::GetIthSoldType(int agencyID, int i, int *res)
+StatusType Car_Agencies_Manager::GetIthSoldType(int agencyID, int i, int *res)
 {
     return FAILURE;
 }
 
-CarAgenciesManager::~CarAgenciesManager()
+Car_Agencies_Manager::~Car_Agencies_Manager()
 {
     delete agencies_;
 }
 
 
 //////////////////////////////  Unite class
-AgencyType *CarAgenciesManager::UniteAgenciesFunc::operator()(AgencyType &a, AgencyType &b)
+Agency *Car_Agencies_Manager::UniteAgenciesFunc::operator()(Agency &a, Agency &b)
 {
     //todo: unite the 2 trees
-    return new AgencyType();
+    return new Agency();
 }
-void CarAgenciesManager::merge(CarElement a[], int na, CarElement b[], int nb, CarElement c[])
+void Car_Agencies_Manager::merge(Car_Element a[], int na, Car_Element b[], int nb, Car_Element c[])
 {
     int ia, ib, ic;
     for (ia = ib = ic = 0; (ia < na) && (ib < nb); ic++) {

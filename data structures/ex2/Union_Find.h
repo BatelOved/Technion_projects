@@ -2,8 +2,8 @@
 #define UNION_FIND_H
 
 #include <iostream>
-#include "DynamicArray.h"
-#include "AgencyType.h"
+#include "Dynamic_Array.h"
+#include "Agency.h"
 
 template<class T>
 class UnionFind {
@@ -31,9 +31,9 @@ public:
 
 private:
     int elements_count;
-    DynamicArray<T> elements_;
-    DynamicArray<int> sizes;
-    DynamicArray<int> parents;
+    Dynamic_Array<T> elements_;
+    Dynamic_Array<int> sizes;
+    Dynamic_Array<int> parents;
 
     int getRootParent(int identifier);
 
