@@ -21,8 +21,9 @@ public:
 
     class UniteAgencyFunc {
     public:
-        AgencyType* operator()(AgencyType *&, AgencyType *&)
+        AgencyType* operator()(AgencyType& a, AgencyType& b)
         {
+            //todo: unite the 2 trees
             return new AgencyType();
         }
     };

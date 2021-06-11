@@ -7,7 +7,7 @@
 
 class UniteIntFunc {
 public:
-    AgencyType* operator()(AgencyType*& a, AgencyType*& b)
+    AgencyType* operator()(AgencyType& a, AgencyType& b)
     {
         return new AgencyType();
     }
