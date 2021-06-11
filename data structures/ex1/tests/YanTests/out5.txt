@@ -87,7 +87,7 @@ GetBestSellerModelByType: 1
 GetBestSellerModelByType: 0
 GetBestSellerModelByType: 9
 GetWorstModels: SUCCESS
-CarType	|	Model
+CarElement	|	Model
 5	|	3
 7	|	3
 7	|	4
@@ -212,7 +212,7 @@ GetBestSellerModelByType: 4
 GetWorstModels: FAILURE
 GetWorstModels: FAILURE
 GetWorstModels: SUCCESS
-CarType	|	Model
+CarElement	|	Model
 5	|	3
 7	|	4
 7	|	3
@@ -307,7 +307,7 @@ CarType	|	Model
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 GetWorstModels: SUCCESS
-CarType	|	Model
+CarElement	|	Model
 5	|	3
 7	|	4
 7	|	3

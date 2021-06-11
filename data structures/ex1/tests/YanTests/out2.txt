@@ -11,7 +11,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 GetBestSellerModelByType: 1
 GetWorstModels: SUCCESS
-CarType	|	Model
+CarElement	|	Model
 1	|	2
 1	|	0
 1	|	4

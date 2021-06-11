@@ -7,7 +7,7 @@ AddCarType: FAILURE
 AddCarType: FAILURE
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 2866	|	0
 2866	|	1
 2866	|	2
@@ -36,7 +36,7 @@ MakeComplaint: SUCCESS
 SellCar: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 2866	|	0
 2866	|	1
 2866	|	2
@@ -110,7 +110,7 @@ SellCar: FAILURE
 GetWorstModels: FAILURE
 MakeComplaint: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 2866	|	0
 2866	|	1
 2866	|	2
@@ -213,7 +213,7 @@ GetWorstModels: INVALID_INPUT
 SellCar: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 7683	|	12
 3269	|	0
 3269	|	1
@@ -277,7 +277,7 @@ AddCarType: SUCCESS
 MakeComplaint: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 7683	|	12
 3269	|	0
 3269	|	1
@@ -447,7 +447,7 @@ AddCarType: SUCCESS
 GetWorstModels: FAILURE
 GetWorstModels: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 5349	|	6
 7683	|	12
@@ -457,7 +457,7 @@ GetWorstModels: SUCCESS
 SellCar: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 5349	|	6
 7683	|	12
@@ -552,7 +552,7 @@ SellCar: FAILURE
 AddCarType: SUCCESS
 GetBestSellerModelByType: 5
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 4756	|	8
 5349	|	6
@@ -787,7 +787,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -970,7 +970,7 @@ RemoveCarType: SUCCESS
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -985,7 +985,7 @@ SellCar: FAILURE
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -1230,7 +1230,7 @@ GetBestSellerModelByType: 0
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -1290,7 +1290,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -1654,7 +1654,7 @@ MakeComplaint: SUCCESS
 SellCar: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -2016,7 +2016,7 @@ SellCar: INVALID_INPUT
 SellCar: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -2218,7 +2218,7 @@ SellCar: FAILURE
 GetBestSellerModelByType: 10
 GetBestSellerModelByType: 9
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -2616,7 +2616,7 @@ SellCar: SUCCESS
 MakeComplaint: FAILURE
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9711	|	10
 3269	|	11
 4756	|	8
@@ -3071,7 +3071,7 @@ MakeComplaint: INVALID_INPUT
 MakeComplaint: SUCCESS
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 4756	|	8
@@ -3145,7 +3145,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 4756	|	8
@@ -3710,7 +3710,7 @@ SellCar: SUCCESS
 MakeComplaint: FAILURE
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 4756	|	8
@@ -3749,7 +3749,7 @@ GetWorstModels: SUCCESS
 AddCarType: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 4756	|	8
@@ -4128,7 +4128,7 @@ SellCar: INVALID_INPUT
 RemoveCarType: SUCCESS
 AddCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -4265,7 +4265,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -4461,7 +4461,7 @@ SellCar: SUCCESS
 AddCarType: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -4593,7 +4593,7 @@ MakeComplaint: SUCCESS
 GetBestSellerModelByType: 0
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -4775,7 +4775,7 @@ MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -5378,7 +5378,7 @@ GetWorstModels: SUCCESS
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 5349	|	6
@@ -5653,7 +5653,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -5880,7 +5880,7 @@ SellCar: FAILURE
 GetBestSellerModelByType: FAILURE
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -6385,7 +6385,7 @@ SellCar: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -6848,7 +6848,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -7214,7 +7214,7 @@ MakeComplaint: SUCCESS
 GetBestSellerModelByType: 0
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -7767,7 +7767,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -7786,7 +7786,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -8061,7 +8061,7 @@ RemoveCarType: FAILURE
 SellCar: FAILURE
 GetWorstModels: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -8267,7 +8267,7 @@ GetWorstModels: INVALID_INPUT
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3757	|	19
 3269	|	11
 3757	|	9
@@ -8297,7 +8297,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -8469,7 +8469,7 @@ MakeComplaint: FAILURE
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -9100,7 +9100,7 @@ SellCar: SUCCESS
 GetWorstModels: FAILURE
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -9590,7 +9590,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -10026,7 +10026,7 @@ SellCar: SUCCESS
 AddCarType: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -10792,7 +10792,7 @@ SellCar: SUCCESS
 SellCar: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3757	|	19
 3269	|	11
@@ -11601,7 +11601,7 @@ GetBestSellerModelByType: 0
 MakeComplaint: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -11981,7 +11981,7 @@ SellCar: SUCCESS
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -12357,7 +12357,7 @@ GetWorstModels: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -13188,7 +13188,7 @@ SellCar: SUCCESS
 GetWorstModels: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -13682,7 +13682,7 @@ SellCar: SUCCESS
 SellCar: INVALID_INPUT
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -14422,7 +14422,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1875	|	12
 3269	|	11
 7683	|	12
@@ -15052,7 +15052,7 @@ SellCar: SUCCESS
 SellCar: FAILURE
 AddCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 7683	|	12
 6137	|	4
@@ -15652,7 +15652,7 @@ MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 7683	|	12
 6137	|	4
@@ -16593,7 +16593,7 @@ SellCar: SUCCESS
 MakeComplaint: SUCCESS
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 3269	|	19
 7683	|	12
@@ -17285,7 +17285,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 3269	|	19
 7683	|	12
@@ -17967,7 +17967,7 @@ SellCar: SUCCESS
 AddCarType: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 3269	|	19
 7683	|	12
@@ -18656,7 +18656,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 3269	|	19
 7683	|	12
@@ -19315,7 +19315,7 @@ SellCar: SUCCESS
 GetBestSellerModelByType: 16
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 3269	|	19
 7683	|	12
@@ -19454,7 +19454,7 @@ SellCar: SUCCESS
 SellCar: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -20172,7 +20172,7 @@ MakeComplaint: FAILURE
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -21171,7 +21171,7 @@ SellCar: SUCCESS
 MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -21708,7 +21708,7 @@ GetWorstModels: SUCCESS
 SellCar: FAILURE
 GetBestSellerModelByType: 15
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -22453,7 +22453,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -22895,7 +22895,7 @@ SellCar: SUCCESS
 MakeComplaint: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -23239,7 +23239,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -24123,7 +24123,7 @@ GetWorstModels: SUCCESS
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 6437	|	4
 3269	|	19
@@ -24818,7 +24818,7 @@ SellCar: SUCCESS
 RemoveCarType: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 1522	|	16
 6437	|	4
@@ -25655,7 +25655,7 @@ SellCar: SUCCESS
 SellCar: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 3269	|	11
 1522	|	16
 6437	|	4
@@ -26346,7 +26346,7 @@ GetBestSellerModelByType: FAILURE
 GetBestSellerModelByType: 4
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -26995,7 +26995,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -28044,7 +28044,7 @@ SellCar: SUCCESS
 AddCarType: SUCCESS
 MakeComplaint: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -28076,7 +28076,7 @@ MakeComplaint: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -28892,7 +28892,7 @@ SellCar: SUCCESS
 GetBestSellerModelByType: 0
 RemoveCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -29101,7 +29101,7 @@ RemoveCarType: FAILURE
 GetBestSellerModelByType: 0
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -30160,7 +30160,7 @@ AddCarType: FAILURE
 SellCar: SUCCESS
 AddCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -30951,7 +30951,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -31702,7 +31702,7 @@ GetWorstModels: INVALID_INPUT
 MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -32321,7 +32321,7 @@ MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -33054,7 +33054,7 @@ SellCar: FAILURE
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -33063,7 +33063,7 @@ GetWorstModels: SUCCESS
 MakeComplaint: SUCCESS
 MakeComplaint: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -33493,7 +33493,7 @@ AddCarType: SUCCESS
 GetBestSellerModelByType: 1
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -33977,7 +33977,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -35165,7 +35165,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -35406,7 +35406,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -36194,7 +36194,7 @@ MakeComplaint: INVALID_INPUT
 MakeComplaint: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -37417,7 +37417,7 @@ AddCarType: SUCCESS
 SellCar: FAILURE
 GetBestSellerModelByType: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -38513,7 +38513,7 @@ RemoveCarType: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -39690,7 +39690,7 @@ GetWorstModels: SUCCESS
 AddCarType: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -39896,7 +39896,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -40586,7 +40586,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -41503,7 +41503,7 @@ MakeComplaint: SUCCESS
 GetBestSellerModelByType: 3
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -41672,7 +41672,7 @@ AddCarType: SUCCESS
 GetBestSellerModelByType: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -42647,7 +42647,7 @@ AddCarType: INVALID_INPUT
 SellCar: SUCCESS
 AddCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -43908,7 +43908,7 @@ SellCar: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -44727,7 +44727,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -45884,7 +45884,7 @@ SellCar: SUCCESS
 SellCar: FAILURE
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -46131,7 +46131,7 @@ SellCar: FAILURE
 SellCar: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -46468,7 +46468,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -47730,7 +47730,7 @@ GetBestSellerModelByType: INVALID_INPUT
 RemoveCarType: FAILURE
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -49556,7 +49556,7 @@ MakeComplaint: SUCCESS
 SellCar: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -50549,7 +50549,7 @@ GetBestSellerModelByType: 0
 GetBestSellerModelByType: 0
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -51193,7 +51193,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 6437	|	4
@@ -52525,7 +52525,7 @@ GetBestSellerModelByType: INVALID_INPUT
 SellCar: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -52854,7 +52854,7 @@ GetWorstModels: SUCCESS
 SellCar: SUCCESS
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -53762,7 +53762,7 @@ MakeComplaint: INVALID_INPUT
 MakeComplaint: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -54272,7 +54272,7 @@ RemoveCarType: FAILURE
 SellCar: INVALID_INPUT
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -55474,7 +55474,7 @@ GetBestSellerModelByType: 0
 GetBestSellerModelByType: 0
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -56660,7 +56660,7 @@ RemoveCarType: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 3269	|	11
 1522	|	16
@@ -56960,7 +56960,7 @@ AddCarType: SUCCESS
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -59104,7 +59104,7 @@ SellCar: FAILURE
 SellCar: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -60657,7 +60657,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -60771,7 +60771,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -61850,7 +61850,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -62918,7 +62918,7 @@ SellCar: INVALID_INPUT
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -63531,7 +63531,7 @@ MakeComplaint: SUCCESS
 AddCarType: FAILURE
 RemoveCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -65750,7 +65750,7 @@ SellCar: FAILURE
 MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -67388,7 +67388,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -68619,7 +68619,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 RemoveCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -69465,7 +69465,7 @@ SellCar: SUCCESS
 RemoveCarType: SUCCESS
 MakeComplaint: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -70567,7 +70567,7 @@ SellCar: FAILURE
 MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 4657	|	0
 1044	|	16
@@ -72757,7 +72757,7 @@ MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -72942,7 +72942,7 @@ GetBestSellerModelByType: 0
 SellCar: INVALID_INPUT
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -73297,7 +73297,7 @@ AddCarType: SUCCESS
 AddCarType: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -74154,7 +74154,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -75971,7 +75971,7 @@ MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -78190,7 +78190,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -79969,7 +79969,7 @@ SellCar: INVALID_INPUT
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -81329,7 +81329,7 @@ AddCarType: SUCCESS
 RemoveCarType: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -83842,7 +83842,7 @@ MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -84889,7 +84889,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -86244,7 +86244,7 @@ GetWorstModels: SUCCESS
 AddCarType: INVALID_INPUT
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -88563,7 +88563,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -91209,7 +91209,7 @@ SellCar: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -93093,7 +93093,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -95602,7 +95602,7 @@ SellCar: SUCCESS
 SellCar: INVALID_INPUT
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -97236,7 +97236,7 @@ GetWorstModels: FAILURE
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -98726,7 +98726,7 @@ GetBestSellerModelByType: FAILURE
 SellCar: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -100771,7 +100771,7 @@ GetBestSellerModelByType: 0
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0
@@ -103092,7 +103092,7 @@ SellCar: SUCCESS
 AddCarType: SUCCESS
 GetBestSellerModelByType: 2
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 382	|	12
 5517	|	1
 4657	|	0

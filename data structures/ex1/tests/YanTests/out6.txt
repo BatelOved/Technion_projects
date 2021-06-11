@@ -731,7 +731,7 @@ GetWorstModels: FAILURE
 GetWorstModels: INVALID_INPUT
 GetWorstModels: INVALID_INPUT
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1	|	99
 2	|	99
 3	|	99
@@ -10779,7 +10779,7 @@ MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 40	|	99
 41	|	99
 42	|	99

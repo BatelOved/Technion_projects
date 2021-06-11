@@ -2,7 +2,8 @@
 #define AGENCY_TYPE_H
 
 //#include "../ex1/AVL_tree.h"
-//#include "car_type.h"
+#include "CarElement.h"
+#include "Rank_tree.h"
 
 class AgencyType {
 public:
@@ -14,8 +15,8 @@ public:
     {
         //todo: complete
     }
-    // AVLTree<CarType>* cars_;
-    //RankAVL<T, S>* sales_;
+    //AVLTree<CarElement,>* cars_;
+    //Rank_tree<CarElement,int>* sales_;
 };
 
 

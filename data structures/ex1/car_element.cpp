@@ -1,4 +1,6 @@
 #include "car_element.h"
+#include "../ex2/CarElement.h"
+
 
 CarElement::CarElement(int typeID, int numOfModels) :
         typeID_(typeID), numOfModels_(numOfModels), carSales_(new SaleElement *[numOfModels]),

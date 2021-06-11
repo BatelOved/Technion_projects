@@ -3,7 +3,7 @@
 
 #include "library2.h"
 #include "union_find.h"
-#include "agency_type.h"
+#include "AgencyType.h"
 
 class CarAgenciesManager {
 public:
@@ -15,22 +15,19 @@ public:
 
     StatusType UniteAgencies(int agencyID1, int agencyID2);
 
-    StatusType GetIthSoldType(int agencyID, int i, int* res);
+    StatusType GetIthSoldType(int agencyID, int i, int *res);
 
     ~CarAgenciesManager();
 
-    class UniteAgencyFunc {
+    class UniteAgenciesFunc {
     public:
-        AgencyType* operator()(AgencyType& a, AgencyType& b)
-        {
-            //todo: unite the 2 trees
-            return new AgencyType();
-        }
+        AgencyType *operator()(AgencyType &a, AgencyType &b);
     };
 
 private:
-    UnionFind<AgencyType>* agencies_;
+    UnionFind<AgencyType> *agencies_;
 
+    void merge(CarElement *a, int na, CarElement *b, int nb, CarElement *c);
 };
 
 CarAgenciesManager::CarAgenciesManager()
@@ -48,19 +45,18 @@ StatusType CarAgenciesManager::AddAgency()
 
 StatusType CarAgenciesManager::SellCar(int agencyID, int typeID, int k)
 {
-    if(agencies_->findIdentifier(agencyID) == agencies_->NO_PARENT)
-    {
+    if (agencies_->findIdentifier(agencyID) == agencies_->NO_PARENT) {
         return FAILURE;
     }
-    AgencyType& agency = agencies_->findElement(agencyID);
-    agency.sellCar(typeID,k);
+    AgencyType &agency = agencies_->findElement(agencyID);
+    agency.sellCar(typeID, k);
     return SUCCESS;
 
 }
 
 StatusType CarAgenciesManager::UniteAgencies(int agencyID1, int agencyID2)
 {
-    agencies_->Union(agencyID1,agencyID2,UniteAgencyFunc());
+    agencies_->Union(agencyID1, agencyID2, UniteAgenciesFunc());
     return FAILURE;
 }
 
@@ -74,4 +70,26 @@ CarAgenciesManager::~CarAgenciesManager()
     delete agencies_;
 }
 
+
+//////////////////////////////  Unite class
+AgencyType *CarAgenciesManager::UniteAgenciesFunc::operator()(AgencyType &a, AgencyType &b)
+{
+    //todo: unite the 2 trees
+    return new AgencyType();
+}
+void CarAgenciesManager::merge(CarElement a[], int na, CarElement b[], int nb, CarElement c[])
+{
+    int ia, ib, ic;
+    for (ia = ib = ic = 0; (ia < na) && (ib < nb); ic++) {
+        if (a[ia] < b[ib]) {
+            c[ic] = a[ia];
+            ia++;
+        } else {
+            c[ic] = b[ib];
+            ib++;
+        }
+    }
+    for (; ia < na; ia++, ic++) c[ic] = a[ia];
+    for (; ib < nb; ib++, ic++) c[ic] = b[ib];
+}
 #endif /* CAR_AGENCIES_MANAGER_H */

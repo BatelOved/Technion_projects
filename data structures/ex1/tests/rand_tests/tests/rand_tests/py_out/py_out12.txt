@@ -19,7 +19,7 @@ MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	2
@@ -62,7 +62,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	2
@@ -110,7 +110,7 @@ MakeComplaint: FAILURE
 RemoveCarType: FAILURE
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	2
@@ -131,7 +131,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	2
@@ -184,7 +184,7 @@ AddCarType: FAILURE
 SellCar: SUCCESS
 GetBestSellerModelByType: 9
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	3
@@ -281,7 +281,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 MakeComplaint: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	3
@@ -340,7 +340,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	3
@@ -387,7 +387,7 @@ GetBestSellerModelByType: FAILURE
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 366	|	0
 366	|	1
 366	|	3

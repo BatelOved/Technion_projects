@@ -11,7 +11,7 @@ MakeComplaint: INVALID_INPUT
 AddCarType: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1604	|	0
 1604	|	1
 1604	|	2
@@ -56,7 +56,7 @@ SellCar: FAILURE
 SellCar: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1604	|	0
 1604	|	1
 1604	|	2

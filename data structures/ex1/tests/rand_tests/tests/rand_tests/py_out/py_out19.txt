@@ -8,7 +8,7 @@ AddCarType: SUCCESS
 AddCarType: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -67,7 +67,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -103,7 +103,7 @@ MakeComplaint: INVALID_INPUT
 AddCarType: SUCCESS
 GetBestSellerModelByType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -139,7 +139,7 @@ SellCar: SUCCESS
 GetWorstModels: FAILURE
 RemoveCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -205,7 +205,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -280,7 +280,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 908	|	0
 908	|	1
 908	|	2
@@ -326,7 +326,7 @@ AddCarType: FAILURE
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 908	|	0
 908	|	1
@@ -372,7 +372,7 @@ SellCar: FAILURE
 MakeComplaint: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 356	|	0
 356	|	1
@@ -470,7 +470,7 @@ CarType	|	Model
 --End of worst models--
 GetWorstModels: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 356	|	0
 356	|	1
@@ -483,7 +483,7 @@ SellCar: SUCCESS
 SellCar: INVALID_INPUT
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 356	|	0
 356	|	1
@@ -669,7 +669,7 @@ SellCar: INVALID_INPUT
 SellCar: SUCCESS
 AddCarType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 356	|	0
 356	|	1
@@ -765,7 +765,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 GetBestSellerModelByType: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 356	|	0
 356	|	1
@@ -970,7 +970,7 @@ AddCarType: SUCCESS
 AddCarType: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	26
 356	|	0
@@ -1093,7 +1093,7 @@ RemoveCarType: FAILURE
 MakeComplaint: FAILURE
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	26
 265	|	0
@@ -1130,7 +1130,7 @@ GetWorstModels: SUCCESS
 RemoveCarType: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	26
 265	|	0
@@ -1170,7 +1170,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	26
 265	|	0
@@ -1340,7 +1340,7 @@ MakeComplaint: INVALID_INPUT
 SellCar: SUCCESS
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	26
 265	|	0
@@ -1611,7 +1611,7 @@ MakeComplaint: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	3
 7191	|	26
@@ -1800,7 +1800,7 @@ CarType	|	Model
 GetWorstModels: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	3
 7191	|	26
@@ -1954,7 +1954,7 @@ AddCarType: SUCCESS
 GetBestSellerModelByType: 1
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	3
 7191	|	26
@@ -2319,7 +2319,7 @@ AddCarType: SUCCESS
 MakeComplaint: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 9234	|	10
 7191	|	3
 7191	|	26
@@ -2487,7 +2487,7 @@ AddCarType: SUCCESS
 SellCar: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 8732	|	21
 9234	|	10
 7191	|	3
@@ -2606,7 +2606,7 @@ GetBestSellerModelByType: 1
 MakeComplaint: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 8732	|	21
 9234	|	10
 7191	|	3

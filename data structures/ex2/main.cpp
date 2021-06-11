@@ -1,6 +1,6 @@
 #include <iostream>
 #include "DynamicArray.h"
-#include "agency_type.h"
+#include "AgencyType.h"
 #include "union_find.h"
 
 #ifdef __cplusplus

@@ -3,7 +3,7 @@ AddCarType: SUCCESS
 MakeComplaint: INVALID_INPUT
 GetBestSellerModelByType: 0
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1561	|	0
 1561	|	1
 1561	|	2
@@ -15,7 +15,7 @@ GetWorstModels: SUCCESS
 AddCarType: SUCCESS
 AddCarType: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1561	|	0
 1561	|	1
 1561	|	2
@@ -63,7 +63,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 SellCar: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1561	|	0
 1561	|	1
 1561	|	2
@@ -110,7 +110,7 @@ MakeComplaint: FAILURE
 MakeComplaint: SUCCESS
 SellCar: FAILURE
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1561	|	0
 1561	|	1
 1561	|	2
@@ -191,7 +191,7 @@ AddCarType: SUCCESS
 GetWorstModels: FAILURE
 MakeComplaint: SUCCESS
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 1561	|	0
 1561	|	1
 1561	|	2

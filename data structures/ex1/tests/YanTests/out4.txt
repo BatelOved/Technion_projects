@@ -25,7 +25,7 @@ SellCar: SUCCESS
 SellCar: SUCCESS
 GetBestSellerModelByType: 2
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 10	|	2
 6	|	1
 21	|	2
@@ -38,7 +38,7 @@ GetWorstModels: SUCCESS
 RemoveCarType: SUCCESS
 GetBestSellerModelByType: 3
 --Start of worst models--
-CarType	|	Model
+CarElement	|	Model
 6	|	1
 21	|	2
 21	|	4
