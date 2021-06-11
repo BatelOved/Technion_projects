@@ -3,7 +3,7 @@
 //
 #include "Car_Element.h"
 
-CarElement::CarElement(int typeID): typeID_(typeID), sales_(0)
+CarElement::CarElement(int typeID,int sales): typeID_(typeID), sales_(sales)
 {}
 
 bool CarElement::operator<(CarElement &element)
@@ -14,4 +14,13 @@ bool CarElement::operator<(CarElement &element)
 bool CarElement::operator==(CarElement &element)
 {
     return this->typeID_==element.typeID_;
+}
+int CarElement::getSales()
+{
+    return sales_;
+}
+
+int CarElement::getTypeId()
+{
+    return typeID_;
 }

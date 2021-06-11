@@ -9,11 +9,15 @@
 class SaleElement {
 public:
 
-    explicit SaleElement(int typeID);
+    explicit SaleElement(int typeID,int sales = 0);
 
     bool operator<(SaleElement& element);
 
     bool operator==(SaleElement& element);
+
+    int getSales();
+
+    int getTypeId();
 
     ~SaleElement() = default;
 

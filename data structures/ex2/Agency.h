@@ -13,11 +13,15 @@ public:
 
     void sellCar(int carType, int amount)
     {
-
+        CarElement to_find(carType);
+        CarElement* car = this->cars_->find(&to_find);
+        SaleElement to_remove(carType,car->getSales());
+        this->sales_->remove(&to_remove);
     }
 
 private:
     RankTree<SaleElement,int>* sales_;
+    RankTree<CarElement,int>* cars_;
 };
 
 

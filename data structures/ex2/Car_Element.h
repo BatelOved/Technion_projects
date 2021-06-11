@@ -4,11 +4,15 @@
 class CarElement {
 public:
 
-    explicit CarElement(int typeID);
+    explicit CarElement(int typeID, int sales = 0);
 
     bool operator<(CarElement& element);
 
     bool operator==(CarElement& element);
+
+    int getSales();
+
+    int getTypeId();
 
     ~CarElement() = default;
 
