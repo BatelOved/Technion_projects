@@ -6,7 +6,7 @@
 #define DATA_STRUCT_1_HW_1_DYNAMIC_ARRAY_H
 
 template<class T>
-class Dynamic_Array {
+class DynamicArray {
 
 private:
     T **arr;
@@ -14,7 +14,7 @@ private:
     int size;
 
 public:
-    Dynamic_Array();
+    DynamicArray();
 
     void add(T *data = nullptr);
 
@@ -28,11 +28,11 @@ public:
 
     void replaceAt(int index,T *data);
 
-    ~Dynamic_Array();
+    ~DynamicArray();
 };
 
 template<class T>
-Dynamic_Array<T>::Dynamic_Array()
+DynamicArray<T>::DynamicArray()
 {
     arr = new T*[1];
     count = 0;
@@ -40,7 +40,7 @@ Dynamic_Array<T>::Dynamic_Array()
 }
 
 template<class T>
-void Dynamic_Array<T>::add(T *data)
+void DynamicArray<T>::add(T *data)
 {
     if (count == size) {
         growSize(); // make array size double
@@ -50,7 +50,7 @@ void Dynamic_Array<T>::add(T *data)
 }
 
 template<class T>
-void Dynamic_Array<T>::growSize()
+void DynamicArray<T>::growSize()
 {
     T **temp = nullptr;
     if (count == size) {
@@ -68,7 +68,7 @@ void Dynamic_Array<T>::growSize()
 }
 
 template<class T>
-void Dynamic_Array<T>::shrinkSize()
+void DynamicArray<T>::shrinkSize()
 {
     T *temp = nullptr;
     if (count > 0) {
@@ -84,13 +84,13 @@ void Dynamic_Array<T>::shrinkSize()
 }
 
 template<class T>
-T &Dynamic_Array<T>::operator[](int index)
+T &DynamicArray<T>::operator[](int index)
 {
     return *arr[index];
 }
 
 template<class T>
-const T &Dynamic_Array<T>::operator[](int index) const
+const T &DynamicArray<T>::operator[](int index) const
 {
     if (index > count)
         return nullptr;
@@ -100,7 +100,7 @@ const T &Dynamic_Array<T>::operator[](int index) const
 }
 
 template<class T>
-Dynamic_Array<T>::~Dynamic_Array()
+DynamicArray<T>::~DynamicArray()
 {
     for (int i = 0; i < count; ++i) {
         auto  t= arr[i];
@@ -110,7 +110,7 @@ Dynamic_Array<T>::~Dynamic_Array()
 }
 
 template<class T>
-void Dynamic_Array<T>::replaceAt(int index, T *data)
+void DynamicArray<T>::replaceAt(int index, T *data)
 {
     delete arr[index];
     arr[index] = data;

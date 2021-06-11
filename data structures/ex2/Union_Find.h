@@ -31,9 +31,9 @@ public:
 
 private:
     int elements_count;
-    Dynamic_Array<T> elements_;
-    Dynamic_Array<int> sizes;
-    Dynamic_Array<int> parents;
+    DynamicArray<T> elements_;
+    DynamicArray<int> sizes;
+    DynamicArray<int> parents;
 
     int getRootParent(int identifier);
 

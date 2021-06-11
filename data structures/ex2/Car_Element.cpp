@@ -3,15 +3,15 @@
 //
 #include "Car_Element.h"
 
-Car_Element::Car_Element(int typeID): typeID_(typeID), sales_(0)
+CarElement::CarElement(int typeID): typeID_(typeID), sales_(0)
 {}
 
-bool Car_Element::operator<(Car_Element &element)
+bool CarElement::operator<(CarElement &element)
 {
     return this->typeID_<element.typeID_;
 }
 
-bool Car_Element::operator==(Car_Element &element)
+bool CarElement::operator==(CarElement &element)
 {
     return this->typeID_==element.typeID_;
 }

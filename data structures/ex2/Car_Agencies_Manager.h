@@ -27,7 +27,7 @@ public:
 private:
     UnionFind<Agency> *agencies_;
 
-    void merge(Car_Element *a, int na, Car_Element *b, int nb, Car_Element *c);
+    void merge(CarElement *a, int na, CarElement *b, int nb, CarElement *c);
 };
 
 Car_Agencies_Manager::Car_Agencies_Manager()
@@ -77,7 +77,7 @@ Agency *Car_Agencies_Manager::UniteAgenciesFunc::operator()(Agency &a, Agency &b
     //todo: unite the 2 trees
     return new Agency();
 }
-void Car_Agencies_Manager::merge(Car_Element a[], int na, Car_Element b[], int nb, Car_Element c[])
+void Car_Agencies_Manager::merge(CarElement a[], int na, CarElement b[], int nb, CarElement c[])
 {
     int ia, ib, ic;
     for (ia = ib = ic = 0; (ia < na) && (ib < nb); ic++) {

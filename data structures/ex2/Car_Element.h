@@ -1,16 +1,16 @@
 #ifndef CAR_ELEMENT_H
 #define CAR_ELEMENT_H
 
-class Car_Element {
+class CarElement {
 public:
 
-    explicit Car_Element(int typeID);
+    explicit CarElement(int typeID);
 
-    bool operator<(Car_Element& element);
+    bool operator<(CarElement& element);
 
-    bool operator==(Car_Element& element);
+    bool operator==(CarElement& element);
 
-    ~Car_Element();
+    ~CarElement() = default;
 
 private:
     int typeID_;

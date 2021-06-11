@@ -10,4 +10,4 @@ add_executable(DS1
         Union_Find.h
         Car_Element.h Car_Element.cpp
         Agency.h
-        Dynamic_Array.h)
+        Dynamic_Array.h Sale_Element.cpp Sale_Element.h)
